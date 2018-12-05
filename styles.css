@@ -71,10 +71,6 @@ a:hover {
   text-decoration: none;
 }
 
-.btn {
-  margin: 0 0 20px 0;
-}
-
 .label:focus {
   border: 1px solid powderblue;
 }
