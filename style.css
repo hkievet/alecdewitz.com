@@ -1,0 +1,30 @@
+.flex-button-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-button-group .btn {
+    flex: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.media:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.captcha-image {
+    margin-left: 120px;
+}
+
+.form-message {
+    width: 100%;
+    height: 100%;
+    display: none;
+}

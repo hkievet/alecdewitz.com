@@ -4,9 +4,13 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Alec Dewitz - Software Developer, UX/UI, Health + Happiness</title>
+  <title>Alec Dewitz • Developer and maker of things ⚡️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/hack/0.8.1/hack.css" rel="stylesheet" />
+  <link href="./style.css" rel="stylesheet" />
+  <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="./form.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116059494-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -25,21 +29,22 @@
 
     <header>
       <h1>Alec Dewitz</h1>
-      <p>User Experience // Tech // Alt. Health</p>
+      Developer and maker of things ⚡️
     </header>
 
-    <h2>About Me</h2>
-    <p>
-      Full-time developer and entrepreneur integrating beautiful and engaging
-      technology within alternative health and natural medicine.
-    </p>
-    <p>My technical skills include:
-      <ul>
-        <li>Front-end: Angular, React, Sass, Ionic</li>
-        <li>Back-end: Java, (My)SQL, Node, Firebase, Mongo, PHP</li>
-        <li>Software: Adobe (Ps, Ai, Id), Final Cut, Excel</li>
-      </ul>
-    </p>
+    <h2>Me</h2>
+    <div class="container">
+      <p>
+        I am a full-stack developer and maker bringing beautiful and engaging
+        technology to alternative health/medicine.
+      </p>
+      <p>Some of my skills include:
+        <ul>
+          <li>Front-end: Angular, React, Sass, and Ionic</li>
+          <li>Back-end: Java, (My)SQL, Node, Firebase, Mongo, and PHP</li>
+          <li>Software: Adobe (Ps, Ai, Id), Final Cut, and Excel</li>
+        </ul>
+    </div>
 
 
     <h2>Work</h2>
@@ -48,39 +53,36 @@
       <p>Software Engineer</p>
       <ul>
         <li>
-          Developed beautiful pages in the Campus Portal mobile app used by
+          Developed beautiful pages in the Campus Portal mobile app accessed by
           millions of students and parents.
         </li>
-        <li>Redesigned student scheduling platform in Angular.</li>
-        <li>Contributed code to our company style guide.</li>
+        <li>Assisted in redesigning and building the new student schedule platform in Angular.</li>
+        <li>Contributed functional and styling code to the company's design style guide.</li>
       </ul>
     </div>
 
-
-
-    <h2>Education</h2>
-
-    <div class="container">
-      <h3>Saint John's University</h3>
-      <p>Collegeville, MN</p>
-      <ul>
-        <li>Entrepreneur Scholar</li>
-        <li>Cross Country</li>
-        <li>
-          Track & Field<br />
-          (400m, 800m, 1600m)
-        </li>
-      </ul>
-    </div>
-
-
-
-    <h2 class="title">Portfolio</h2>
+    <h2 class="title">Projects</h2>
 
     <div class="container">
       <div class="media">
         <div class="media-left">
-          <div class="avatarholder">SH</div>
+          <div class="avatarholder"><span aria-hidden="true" class="icon">🏋️</span></div>
+        </div>
+        <div class="media-body">
+          <div class="media-heading">
+            Pro Sports Nutrition
+          </div>
+          <div class="media-content">
+            Delicious vegan meal-replacement powder protein shakes for pre- and post-workout meals.
+            <p>
+              <a href="https://prosportsnutrition.com" target="_blank">prosportsnutrition.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="media">
+        <div class="media-left">
+          <div class="avatarholder"><span aria-hidden="true" class="icon">🌟</span></div>
         </div>
         <div class="media-body">
           <div class="media-heading">
@@ -88,12 +90,12 @@
           </div>
           <div class="media-content">
             Activated + structured water tinctures infused with energy from stars,
-            planets and comets.
+            planets, and comets.
             <p>
               <a href="https://starhealers.com" target="_blank">starhealers.com</a>
             </p>
             <p>
-              Follow us @starhealers!
+              Follow us <i>@starhealers</i>!<br>
               <a href="https://www.facebook.com/starhealers" target="_blank">Facebook</a> ||
               <a href="https://twitter.com/starhealers" target="_blank">Twitter</a> ||
               <a href="https://www.instagram.com/starhealers" target="_blank">Instagram</a>
@@ -103,11 +105,11 @@
       </div>
       <div class="media">
         <div class="media-left">
-          <div class="avatarholder">GP</div>
+          <div class="avatarholder"><span aria-hidden="true" class="icon">🤖</span></div>
         </div>
         <div class="media-body">
           <div class="media-heading">
-            Gold Phantom
+            GP
           </div>
           <div class="media-content">
             Automated SaaS bot company with over 6,000 recurring customers.
@@ -119,36 +121,63 @@
       </div>
     </div>
 
+    <h2>Education</h2>
+
+    <div class="container">
+      <h3>Saint John's University</h3>
+      <p>Collegeville, MN</p>
+      <ul>
+        <li>Entrepreneur Scholar [E-12]</li>
+        <li>Cross Country</li>
+        <li>
+          Track & Field [mid-distance]
+        </li>
+      </ul>
+    </div>
+
     <h2>Contact</h2>
+    <div class="container" id="contact">
 
-    <p>
-      <a class="btn btn-block btn-primary" href="https://alecd.typeform.com/to/Opqyd9" data-mode="drawer_left" data-hide-headers="true" data-hide-footer="true" data-submit-close-delay="5" target="_blank">Send me a Message
-      </a>
-      <script>
-        (function () {
-          var qs,
-            js,
-            q,
-            s,
-            d = document,
-            gi = d.getElementById,
-            ce = d.createElement,
-            gt = d.getElementsByTagName,
-            id = "typef_orm_share",
-            b = "https://embed.typeform.com/";
-          if (!gi.call(d, id)) {
-            js = ce.call(d, "script");
-            js.id = id;
-            js.src = b + "embed.js";
-            q = gt.call(d, "script")[0];
-            q.parentNode.insertBefore(js, q);
-          }
-        })();
-      </script>
-    </p>
 
-    <p>or</p>
-    <p>
+      <form role="form" method="post" id="contactForm">
+        <fieldset class="form-group">
+          <label for="name">NAME:</label>
+          <input id="name" type="text" name="name" placeholder="Type your name..." class="form-control" required maxlength="80">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="email">EMAIL:</label>
+          <input id="email" type="email" name="email" placeholder="Type your email..." class="form-control" maxlength="80" required>
+        </fieldset>
+        <fieldset class="form-group form-textarea">
+          <label for="message">MESSAGE:</label>
+          <textarea id="message" name="message" rows="7" type="textarea" class="form-control" maxlength="6000" placeholder="Hi, &#10;&#10;How are you doing? &#10;&#10;Best wishes, &#10;&#10;Johnnie" required></textarea>
+        </fieldset>
+
+        <div class="captcha-image">
+          <img src="https://code.alecdewitz.com/captcha.php" id="captcha_image" />
+          <a id="captcha_reload" href="#">too hard?</a>
+        </div>
+
+        <fieldset class="form-group">
+          <label for="captcha">CAPTCHA:</label>
+          <input id="captcha" type="text" name="captcha" placeholder="Type captcha code in image..." class="form-control" required maxlength="10">
+        </fieldset>
+        <div class="form-actions">
+          <button type='submit' class="btn btn-primary btn-block">Send message</button>
+        </div>
+      </form>
+      <div id="success_message" class="form-message">
+        <h3>Thanks, your message was sent successfully.</h3>
+      </div>
+      <div id="error_message" class="form-message">
+        <h3>Error</h3>
+        I'm sorry, there was an error sending your message.
+      </div>
+    </div>
+    <hr>
+
+    <h3 class="center">Follow me!</h3>
+    <p class="flex-button-group">
       <a href="https://github.com/alecdewitz" target="_blank" class="btn btn-default">
         GitHub
       </a>
@@ -167,7 +196,7 @@
     </p>
 
 
-    <footer>
+    <footer class="center">
       <p>
         Built with
         <a href="https://github.com/egoist/hack" target="_blank" nofollow>hack.css</a>. View in <a href="nes.html">NES mode</a>.
@@ -177,11 +206,5 @@
 
   </div>
 </body>
-<script>
-  function autoGrow(element) {
-    element.style.height = "5px";
-    element.style.height = element.scrollHeight + "px";
-  }
-</script>
 
 </html>
