@@ -1,34 +1,44 @@
 .flex-button-group {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .flex-button-group .btn {
-    flex: auto;
+  flex: auto;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .media:not(:last-child) {
-    border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .icon {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .captcha-image {
-    margin-left: 120px;
+  margin-left: 120px;
 }
 
 .form-message {
-    width: 100%;
-    height: 100%;
-    display: none;
+  width: 100%;
+  height: 100%;
+  display: none;
 }
 
 .g-recaptcha {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.btn.btn-primary.btn-block {
+  width: 360px;
+}
+
+@media screen and (max-width: 768px) {
+  .btn.btn-primary.btn-block {
+    width: 100%;
+  }
 }
