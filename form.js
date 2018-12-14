@@ -40,19 +40,24 @@ $(function () {
             $btn.text('Sending ...');
         });
 
-
-        $.ajax({
-            type: "POST",
-            url: 'https://code.alecdewitz.com/contact.php', // code.alecdewitz.com has some code btw
-            data: $form.serialize(),
-            success: after_form_submitted,
-            dataType: 'json'
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LdhaX4UAAAAAJ1pFIEwzdCCAujct1OXQqxZhD7o', {
+                    action: 'action_name'
+                })
+                .then(function (token) {
+                    $.post('https://code.alecdewitz.com/recaptcha.php?action=examples/v3scores&token=' + token, function (data) {
+                        $.ajax({
+                            type: "POST",
+                            url: 'https://code.alecdewitz.com/contact.php', // code.alecdewitz.com has some code btw
+                            data: $form.serialize(),
+                            success: after_form_submitted,
+                            dataType: 'json'
+                        });
+                    });
+                });
         });
-
     });
 });
-
-
 
 $(function () {
     $('#captcha_reload').on('click', function (e) {
@@ -63,4 +68,5 @@ $(function () {
 
         $("img#captcha_image").attr("src", src + '?' + d.getTime());
     });
+
 });
