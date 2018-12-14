@@ -10,8 +10,8 @@
   <link href="./style.css" rel="stylesheet" />
   <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src='https://www.google.com/recaptcha/api.js?render=6LdhaX4UAAAAAJ1pFIEwzdCCAujct1OXQqxZhD7o'></script>
   <script src="./form.js"></script>
+  <script async defer src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116059494-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -46,7 +46,6 @@
           <li>Software: Adobe (Ps, Ai, Id), Final Cut, and Excel</li>
         </ul>
     </div>
-
 
     <h2>Work</h2>
     <div class="container">
@@ -139,7 +138,6 @@
     <h2>Contact</h2>
     <div class="container" id="contact">
 
-
       <form role="form" method="post" id="contactForm">
         <fieldset class="form-group">
           <label for="name">NAME:</label>
@@ -154,15 +152,10 @@
           <textarea id="message" name="message" rows="7" type="textarea" class="form-control" maxlength="6000" placeholder="Hi, &#10;&#10;How are you doing? &#10;&#10;Best wishes, &#10;&#10;Johnnie" required></textarea>
         </fieldset>
 
-        <div class="captcha-image">
-          <img src="https://code.alecdewitz.com/captcha.php" id="captcha_image" />
-          <a id="captcha_reload" href="#">too hard?</a>
+        <div>
+          <div class="g-recaptcha" id="recaptcha" data-sitekey="6LfKfoEUAAAAAIknUMVH1dkBfZSsTesjrhTqCSki"></div>
         </div>
 
-        <fieldset class="form-group">
-          <label for="captcha">CAPTCHA:</label>
-          <input id="captcha" type="text" name="captcha" placeholder="Type captcha code in image..." class="form-control" required maxlength="10">
-        </fieldset>
         <div class="form-actions">
           <button type='submit' class="btn btn-primary btn-block">Send message</button>
         </div>
@@ -195,7 +188,6 @@
         Product Hunt
       </a>
     </p>
-
 
     <footer class="center">
       <p>

@@ -28,3 +28,7 @@
     height: 100%;
     display: none;
 }
+
+.g-recaptcha {
+    margin-bottom: 25px;
+}

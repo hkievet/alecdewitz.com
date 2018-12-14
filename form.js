@@ -1,4 +1,7 @@
+var submitForm = false;
+
 $(function () {
+
     function after_form_submitted(data) {
         if (data.result == 'success') {
             $('form#contactForm').hide();
@@ -31,42 +34,41 @@ $(function () {
     $('#contactForm').submit(function (e) {
         e.preventDefault();
 
-        $form = $(this);
-        //show some response on the button
-        $('button[type="submit"]', $form).each(function () {
-            $btn = $(this);
-            // $btn.prop('type', 'button');
-            $btn.prop('orig_label', $btn.text());
-            $btn.text('Sending ...');
-        });
-
-        grecaptcha.ready(function () {
-            grecaptcha.execute('6LdhaX4UAAAAAJ1pFIEwzdCCAujct1OXQqxZhD7o', {
-                    action: 'action_name'
-                })
-                .then(function (token) {
-                    $.post('https://code.alecdewitz.com/recaptcha.php?action=examples/v3scores&token=' + token, function (data) {
-                        $.ajax({
-                            type: "POST",
-                            url: 'https://code.alecdewitz.com/contact.php', // code.alecdewitz.com has some code btw
-                            data: $form.serialize(),
-                            success: after_form_submitted,
-                            dataType: 'json'
-                        });
-                    });
-                });
-        });
-    });
-});
-
-$(function () {
-    $('#captcha_reload').on('click', function (e) {
-        e.preventDefault();
-        d = new Date();
-        var src = $("img#captcha_image").attr("src");
-        src = src.split(/[?#]/)[0];
-
-        $("img#captcha_image").attr("src", src + '?' + d.getTime());
+        if (submitForm) {
+            $form = $(this);
+            //show some response on the button
+            $('button[type="submit"]', $form).each(function () {
+                $btn = $(this);
+                // $btn.prop('type', 'button');
+                $btn.prop('orig_label', $btn.text());
+                $btn.text('Sending ...');
+            });
+            $.ajax({
+                type: "POST",
+                url: 'https://code.alecdewitz.com/contact.php', // code.alecdewitz.com has some code btw
+                data: $form.serialize(),
+                success: after_form_submitted,
+                dataType: 'json'
+            });
+        }
     });
 
 });
+
+var onloadCallback = function () {
+    grecaptcha.render('recaptcha', {
+        'sitekey': '6LfKfoEUAAAAAIknUMVH1dkBfZSsTesjrhTqCSki',
+        'callback': reCaptchaVerify,
+        'expired-callback': reCaptchaExpired
+    });
+};
+
+function reCaptchaVerify(response) {
+    if (response === document.querySelector('.g-recaptcha-response').value) {
+        submitForm = true;
+    }
+}
+
+function reCaptchaExpired(data) {
+    console.error('Captcha has expired.');
+}
