@@ -1,7 +1,5 @@
-## Welcome to My GitHub Page
+# alecdewitz
 
-Feel free to send me a message to connect! I would love to hear from you.
+alecdewitz.com website
 
-### Styling
-
-This website uses the [NES.css](https://github.com/BcRikko/NES.css) framework
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5602e8b7-5c33-4304-8794-e60cc00a1a6c/deploy-status)](https://app.netlify.com/sites/hopeful-wiles-23d3bb/deploys)
